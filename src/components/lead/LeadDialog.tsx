@@ -48,8 +48,9 @@ export function LeadDialog({
     const fd = new FormData(e.currentTarget);
     const payload = Object.fromEntries(fd.entries());
 
+    const endpoint = (typeof window !== "undefined" && (process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "")) || "/api/lead";
     try {
-      const res = await fetch("/api/lead", {
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

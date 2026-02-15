@@ -9,18 +9,7 @@ export const metadata: Metadata = {
     "Request a call back or book an NRI consultation. Premium, documentation-first NRI services in Ahmedabad.",
 };
 
-export default function ContactPage({
-  searchParams,
-}: {
-  searchParams?: { intent?: string };
-}) {
-  const intent =
-    searchParams?.intent === "consultation"
-      ? "consultation"
-      : searchParams?.intent === "callback"
-        ? "callback"
-        : undefined;
-
+export default function ContactPage() {
   return (
     <section className="bg-white">
       <Container className="py-14 lg:py-20">
@@ -52,7 +41,7 @@ export default function ContactPage({
           </div>
 
           <div className="lg:col-span-7">
-            <ContactForm defaultIntent={intent} />
+            <ContactForm />
           </div>
         </div>
       </Container>

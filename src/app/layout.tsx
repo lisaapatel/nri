@@ -11,8 +11,9 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nrisolutions.us";
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nrisolutions.us"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "NRI Solutions — Ahmedabad NRI Property, Legal & Asset Services",
     template: "%s — NRI Solutions",
